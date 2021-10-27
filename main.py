@@ -69,9 +69,8 @@ def get_status_login_ins(hashtag):
 
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=updateData, trigger="interval", seconds=9999999999)
+scheduler.add_job(func=updateData, trigger="interval", seconds=90000000000000)
 scheduler.start()
 
 if __name__ == '__main__':
-    # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)
