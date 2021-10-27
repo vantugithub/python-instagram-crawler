@@ -205,7 +205,7 @@ def fetchPostsData(session, hashtag, number_data):
                     params={"__a": 1,
                             "max_id": data_temp['data']['recent']['next_max_id']}
                 )
-                # times.sleep(3)
+                times.sleep(3)
             pageNumber += 1
         except:
             break
@@ -233,7 +233,7 @@ def main(number_data, hashtag):
 def wordCountDict(hashtag):
     session = instaLogin()
     if session.context.is_logged_in:
-        list_of_hashtag = fetchPostsData(session, str(hashtag), 60)
+        list_of_hashtag = fetchPostsData(session, str(hashtag), 30)
         list_infoo = get_hashtag_final(list_of_hashtag)
         number = []
         for i in range(0, len(list_infoo)):
