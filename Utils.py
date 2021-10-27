@@ -104,7 +104,7 @@ def fetchPostsData(session, hashtag, number_data):
         try:
             if len(list_info) > int(number_data):
                 break
-            print("Page " + str(pageNumber))
+            # print("Page " + str(pageNumber))
             for i in range(len(data_temp.get("data").get("top").get("sections"))):
                 try:
                     for j in range(len(
@@ -115,8 +115,8 @@ def fetchPostsData(session, hashtag, number_data):
                                 j].get(
                                 "media").get("code")
 
-                        print(data_temp.get("data").get("top").get("sections")[i].get("layout_content").get("medias")[
-                                  j].get("media").get("code"))
+                        # print(data_temp.get("data").get("top").get("sections")[i].get("layout_content").get("medias")[
+                        #           j].get("media").get("code"))
 
                         info["user"] = \
                             data_temp.get("data").get("top").get("sections")[i].get("layout_content").get("medias")[
@@ -161,9 +161,9 @@ def fetchPostsData(session, hashtag, number_data):
                             data_temp.get("data").get("recent").get("sections")[i].get("layout_content").get("medias")[
                                 j].get("media").get("code")
 
-                        print(
-                            data_temp.get("data").get("recent").get("sections")[i].get("layout_content").get("medias")[
-                                j].get("media").get("code"))
+                        # print(
+                        #     data_temp.get("data").get("recent").get("sections")[i].get("layout_content").get("medias")[
+                        #         j].get("media").get("code"))
 
                         info["user"] = \
                             data_temp.get("data").get("recent").get("sections")[i].get("layout_content").get("medias")[
@@ -215,7 +215,7 @@ def fetchPostsData(session, hashtag, number_data):
 def get_hashtag_final(list_info):
     list_ = list_info
     for i in range(len(list_)):
-        print(get_hashtag(list_[i]['caption']))
+        # print(get_hashtag(list_[i]['caption']))
         list_[i]['caption'] = get_hashtag(list_[i]['caption'])
         list_[i]['user_name'] = remove_emoji_username(list_[i]['user_name'])
     return list_
