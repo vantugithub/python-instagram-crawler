@@ -72,5 +72,5 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(func=updateData, trigger="interval", seconds=90000000000000)
 scheduler.start()
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
