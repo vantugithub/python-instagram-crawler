@@ -1,7 +1,3 @@
-import config
-import pymysql.cursors
-import psycopg2
-
 # import Utils
 # import mysql_query
 #
