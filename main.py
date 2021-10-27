@@ -72,4 +72,6 @@ scheduler = BackgroundScheduler()
 scheduler.add_job(func=updateData, trigger="interval", seconds=9999999999)
 scheduler.start()
 
-app.run()
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)

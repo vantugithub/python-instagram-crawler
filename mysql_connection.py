@@ -5,11 +5,13 @@ import psycopg2
 # import Utils
 # import mysql_query
 #
+# list_hashtag = ["netflix", "filmphotography", "technology", "tiktok"]
 # session = Utils.instaLogin()
 # mysql_query.resetDataAndUpdateDataPerWeek()
-# list_of_hashtag = Utils.fetchPostsData(session, "netflix", 30)
-# list_of_hashtag_final = Utils.get_hashtag_final(list_of_hashtag)
-# mysql_query.insertUserAndPost(list_of_hashtag_final)
+# for i in list_hashtag:
+#     list_of_hashtag = Utils.fetchPostsData(session, str(i), 500)
+#     list_of_hashtag_final = Utils.get_hashtag_final(list_of_hashtag)
+#     mysql_query.insertUserAndPost(list_of_hashtag_final)
 
 # conn = psycopg2.connect(dbname=config.mysql_db, user=config.mysql_user, password=config.mysql_password,
 #                         host=config.mysql_host)
