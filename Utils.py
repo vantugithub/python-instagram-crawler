@@ -205,7 +205,7 @@ def fetchPostsData(session, hashtag, number_data):
                     params={"__a": 1,
                             "max_id": data_temp['data']['recent']['next_max_id']}
                 )
-                times.sleep(3)
+                # times.sleep(3)
             pageNumber += 1
         except:
             break
