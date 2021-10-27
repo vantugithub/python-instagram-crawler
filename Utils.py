@@ -9,6 +9,8 @@ import re
 from langdetect import detect
 import instaloader
 
+session_login = instaloader.Instaloader()
+
 
 def remove_emoji_username(string):
     emoji_pattern = re.compile("["
@@ -83,14 +85,12 @@ def checkLanguage(language):
 
 def instaLogin():
     print("Logging in...")
+    if not session_login.context.is_logged_in:
+        session_login.context.sleep = False
+        session_login.login("nangnaggg", "q121222112")
+        print("...done")
 
-    ses = instaloader.Instaloader()
-    ses.context.sleep = False
-    ses.login("nangnaggg", "q121222112")
-
-    print("...done")
-
-    return ses
+    return session_login
 
 
 def fetchPostsData(session, hashtag, number_data):
