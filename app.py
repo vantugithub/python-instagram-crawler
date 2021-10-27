@@ -65,7 +65,7 @@ def get_status_login_ins(hashtag):
     # list_of_hashtag_final = Utils.get_hashtag_final(list_of_hashtag)
     # mysql_query.insertUserAndPost(list_of_hashtag_final)
     list_of_hashtag_final = Utils.wordCountDict(hashtag)
-    return json.dumps(list_of_hashtag_final)
+    return jsonify(list_of_hashtag_final)
 
 
 scheduler = BackgroundScheduler()

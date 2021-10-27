@@ -233,7 +233,7 @@ def main(number_data, hashtag):
 def wordCountDict(hashtag):
     session = instaLogin()
     if session.context.is_logged_in:
-        list_of_hashtag = fetchPostsData(session, str(hashtag), 30)
+        list_of_hashtag = fetchPostsData(session, str(hashtag), 60)
         list_infoo = get_hashtag_final(list_of_hashtag)
         number = []
         for i in range(0, len(list_infoo)):
