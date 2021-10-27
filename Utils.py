@@ -205,7 +205,7 @@ def fetchPostsData(session, hashtag, number_data):
                     params={"__a": 1,
                             "max_id": data_temp['data']['recent']['next_max_id']}
                 )
-                times.sleep(5)
+                # times.sleep(5)
             pageNumber += 1
         except:
             break
@@ -240,8 +240,8 @@ def wordCountDict(hashtag):
             temp = list_infoo[i]['caption'].split()
             for j in temp:
                 try:
-                    if checkLanguage(str(j)) is True and str(hashtag).lower() not in j.lower():
-                        number.append(j)
+                    # if checkLanguage(str(j)) is True and str(hashtag).lower() not in j.lower():
+                    number.append(j)
                 except:
                     continue
         word_could_dict = Counter(number)
