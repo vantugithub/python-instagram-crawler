@@ -69,7 +69,7 @@ def get_status_login_ins(hashtag):
 
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=updateData, trigger="interval", seconds=90000000000000)
+scheduler.add_job(func=updateData, trigger="interval", seconds=604800)
 scheduler.start()
 
 if __name__ == "__main__":
