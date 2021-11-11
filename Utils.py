@@ -233,20 +233,20 @@ def main(number_data, hashtag):
 def wordCountDict(hashtag):
     session = instaLogin()
     if session.context.is_logged_in:
-        list_of_hashtag = fetchPostsData(session, str(hashtag), 30)
-        list_infoo = get_hashtag_final(list_of_hashtag)
-        number = []
-        for i in range(0, len(list_infoo)):
-            temp = list_infoo[i]['caption'].split()
-            for j in temp:
-                try:
-                    # if checkLanguage(str(j)) is True and str(hashtag).lower() not in j.lower():
-                    number.append(j)
-                except:
-                    continue
-        word_could_dict = Counter(number)
-        ok = list(reversed(sorted(word_could_dict.items(), key=lambda item: item[1])))
-        return ok
+        list_of_hashtag = fetchPostsData(session, str(hashtag), 100)
+        # list_infoo = get_hashtag_final(list_of_hashtag)
+        # number = []
+        # for i in range(0, len(list_infoo)):
+        #     temp = list_infoo[i]['caption'].split()
+        #     for j in temp:
+        #         try:
+        #             # if checkLanguage(str(j)) is True and str(hashtag).lower() not in j.lower():
+        #             number.append(j)
+        #         except:
+        #             continue
+        # word_could_dict = Counter(number)
+        # ok = list(reversed(sorted(word_could_dict.items(), key=lambda item: item[1])))
+        return list_of_hashtag
     else:
         raise Exception("Authentication failure!")
         return None
