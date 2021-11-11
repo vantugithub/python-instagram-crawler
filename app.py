@@ -1,12 +1,13 @@
 from flask import Flask, jsonify, request
 from apscheduler.schedulers.background import BackgroundScheduler
+from flask_cors import CORS
+
 import Utils
 import mysql_query
 from Utils import *
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-
 store = [
     {
         "name": "L298N",
@@ -64,8 +65,9 @@ def get_status_login_ins(hashtag):
     # list_of_hashtag = Utils.login_ins(str(hashtag), 200)
     # list_of_hashtag_final = Utils.get_hashtag_final(list_of_hashtag)
     # mysql_query.insertUserAndPost(list_of_hashtag_final)
-    list_of_hashtag_final = Utils.wordCountDict(hashtag)
-    return jsonify(list_of_hashtag_final)
+    list_of_hashtag_final = jsonify(Utils.wordCountDict(hashtag))
+    list_of_hashtag_final.headers.add('Access-Control-Allow-Origin', '*')
+    return list_of_hashtag_final
 
 
 scheduler = BackgroundScheduler()
