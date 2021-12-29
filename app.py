@@ -9,6 +9,7 @@ import mysql_query
 from Utils import *
 
 app = Flask(__name__)
+CORS(app)
 app.config['JSON_AS_ASCII'] = False
 store = [
     {
